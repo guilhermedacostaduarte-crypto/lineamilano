@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linea Milano | Mobiliário e Projetos Personalizados</title>
+    <style>
+        /* Variáveis de Cores (Baseadas em tons elegantes) */
+        :root {
+            --cor-primaria: #4A5346; /* Verde Oliva Acinzentado */
+            --cor-secundaria: #C5A059; /* Dourado / Cobre */
+            --cor-fundo: #FAFAFA; /* Branco Suave */
+            --cor-bege: #F5F5DC; /* Bege dos Cards */
+            --cor-texto: #333333;
+            --cor-texto-claro: #666666;
+        }
+
+        /* Reset e Estilos Globais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--cor-fundo);
+            color: var(--cor-texto);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Cabeçalho / Navegação */
+        header {
+            background-color: #ffffff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--cor-primaria);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: var(--cor-secundaria);
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links li a {
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links li a:hover {
+            color: var(--cor-secundaria);
+        }
+
+        /* Secção Hero (Banner Principal) */
+        .hero {
+            background: linear-gradient(rgba(74, 83, 70, 0.8), rgba(74, 83, 70, 0.8)), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
+            color: white;
+            text-align: center;
+            padding: 120px 20px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .hero p {
+            font-size: 18px;
+            max-width: 600px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--cor-secundaria);
+            color: white;
+            padding: 15px 35px;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #b08d4b;
+        }
+
+        /* Categorias de Produtos */
+        .categorias {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .categorias h2 {
+            font-size: 32px;
+            margin-bottom: 50px;
+            color: var(--cor-primaria);
+        }
+
+        .grid-categorias {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card-categoria {
+            background: var(--cor-bege);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .card-categoria:hover {
+            transform: translateY(-10px);
+        }
+
+        /* Estilo da Imagem Renderizada */
+        .card-img-render {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 25px;
+        }
+
+        .card-content h3 {
+            margin-bottom: 10px;
+            font-size: 22px;
+        }
+
+        .card-content p {
+            color: var(--cor-texto-claro);
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        /* Secção Projetos Personalizados */
+        .projetos-personalizados {
+            background-color: var(--cor-primaria);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .projetos-personalizados h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: var(--cor-secundaria);
+        }
+
+        .projetos-personalizados p {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            font-size: 18px;
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        footer p {
+            opacity: 0.7;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        /* Botão Flutuante do WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+
+        /* Responsividade Total (iOS, Android, Tablets e Desktops Menores) */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+            .hero {
+                padding: 80px 20px;
+            }
+            .hero h1 {
+                font-size: 32px;
+            }
+            .categorias h2 {
+                font-size: 28px;
+            }
+            .projetos-personalizados h2 {
+                font-size: 28px;
+            }
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                right: 20px;
+                font-size: 24px;
+            }
+        }
+
+        /* Ajuste fino para celulares muito pequenos (iPhone SE, etc) */
+        @media (max-width: 480px) {
+            .nav-links {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+            .hero h1 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">Linea <span>Milano</span></div>
+            <ul class="nav-links">
+                <li><a href="#cozinhas">Cozinhas Moduladas</a></li>
+                <li><a href="#dormitorios">Dormitórios</a></li>
+                <li><a href="#jantar">Sala de Jantar</a></li>
+                <li><a href="#projetos">Projetos Personalizados</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>Design e Sofisticação para o seu Lar</h1>
+        <p>Mobiliário de alta qualidade e projetos personalizados. Entrega com qualidade e segurança.</p>
+        <a href="#projetos" class="btn">Solicite o seu Projeto</a>
+    </section>
+
+    <section class="categorias" id="cozinhas">
+        <h2>O Nosso Catálogo</h2>
+        <div class="grid-categorias">
+            
+            <div class="card-categoria">
+                <img src="imagem/cozinha.png.png" alt="Cozinhas Moduladas" class="card-img-render">
+                <div class="card-content">
+                    <h3>Cozinhas Moduladas</h3>
+                    <a href="#" style="color: var(--cor-secundaria); font-weight: bold;">Ver Produtos &rarr;</a>
+                </div>
+            </div>
+
+            <div class="card-categoria">
+                <img src="imagem/quarto.png.png" alt="Dormitórios" class="card-img-render">
+                <div class="card-content">
+                    <h3>Dormitórios</h3>
+                    <a href="#" style="color: var(--cor-secundaria); font-weight: bold;">Ver Produtos &rarr;</a>
+                </div>
+            </div>
+
+            <div class="card-categoria">
+                <img src="imagem/sala.png.png" alt="Sala de Jantar" class="card-img-render">
+                <div class="card-content">
+                    <h3>Sala de Jantar</h3>
+                    <a href="#" style="color: var(--cor-secundaria); font-weight: bold;">Ver Produtos &rarr;</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="projetos-personalizados" id="projetos">
+        <h2>O Seu Projeto, à Sua Medida</h2>
+        <p>Sonhe, projete e realize. Envie a planta ou as medidas do seu espaço e os nossos especialistas na Linea Milano irão criar um projeto 3D utilizando os nossos módulos inteligentes.</p>
+        <p><strong>Atendimento exclusivo e personalizado.</strong></p>
+        <a href="https://wa.me/SEU_NUMERO_AQUI" target="_blank" class="btn">Fale com um Especialista Agora</a>
+    </section>
+
+    <footer>
+        <div class="logo" style="color: white; margin-bottom: 10px;">Linea <span>Milano</span></div>
+        <p>A sua loja de mobiliário premium online. Excelência e dedicação no interior paulista.</p>
+        <p>&copy; 2026 Linea Milano - Marília/SP. Todos os direitos reservados.</p>
+    </footer>
+
+    <a href="https://wa.me/SEU_NUMERO_AQUI" class="whatsapp-float" target="_blank" title="Fale connosco pelo WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
+        </svg>
+    </a>
+
+</body>
+</html>
