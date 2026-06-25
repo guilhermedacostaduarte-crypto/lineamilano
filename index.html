@@ -52,16 +52,43 @@
             align-items: center;
         }
 
+        /* Novas classes para acomodar o Símbolo + Logo + Slogan */
+        .logo-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-img {
+            height: 45px;
+            width: auto;
+        }
+
+        .logo-container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .slogan {
+            font-size: 11px;
+            color: var(--cor-texto-claro);
+            font-weight: 400;
+            letter-spacing: 1.5px;
+            text-transform: none;
+            margin-top: -3px;
+        }
+
+        /* Cores da logo "Linea Milano" */
         .logo {
             font-size: 24px;
             font-weight: bold;
-            color: var(--cor-primaria);
+            color: #C5A059; /* Dourado (Letra L) */
             text-transform: uppercase;
             letter-spacing: 2px;
         }
 
         .logo span {
-            color: var(--cor-secundaria);
+            color: #222527; /* Cinza Escuro (Letra M) */
         }
 
         .nav-links {
@@ -169,6 +196,70 @@
             margin-bottom: 15px;
         }
 
+        /* Barra de Informações */
+        .info-bar-container {
+            background-color: var(--cor-fundo);
+            padding: 40px 20px;
+        }
+
+        .info-bar {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .payment-box, .cep-box {
+            text-align: center;
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .info-bar h3 {
+            font-size: 16px;
+            color: var(--cor-texto);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        /* Estilo dos ícones refeitos */
+        .payment-option {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 5px;
+            font-size: 14px;
+        }
+
+        .cep-form {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .cep-form input {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            width: 150px;
+        }
+
+        .cep-form button {
+            background-color: var(--cor-secundaria);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
         /* Secção Projetos Personalizados */
         .projetos-personalizados {
             background-color: var(--cor-primaria);
@@ -203,7 +294,6 @@
             margin-top: 10px;
         }
 
-        /* Botão Flutuante do WhatsApp */
         .whatsapp-float {
             position: fixed;
             width: 60px;
@@ -222,61 +312,24 @@
             justify-content: center;
             transition: transform 0.3s;
         }
-
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-        }
-
-        /* Responsividade Total (iOS, Android, Tablets e Desktops Menores) */
-        @media (max-width: 768px) {
-            .nav-container {
-                flex-direction: column;
-                gap: 15px;
-            }
-            .nav-links {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 15px;
-            }
-            .hero {
-                padding: 80px 20px;
-            }
-            .hero h1 {
-                font-size: 32px;
-            }
-            .categorias h2 {
-                font-size: 28px;
-            }
-            .projetos-personalizados h2 {
-                font-size: 28px;
-            }
-            .whatsapp-float {
-                width: 50px;
-                height: 50px;
-                bottom: 20px;
-                right: 20px;
-                font-size: 24px;
-            }
-        }
-
-        /* Ajuste fino para celulares muito pequenos (iPhone SE, etc) */
-        @media (max-width: 480px) {
-            .nav-links {
-                flex-direction: column;
-                align-items: center;
-                gap: 10px;
-            }
-            .hero h1 {
-                font-size: 28px;
-            }
-        }
     </style>
 </head>
 <body>
 
     <header>
         <div class="nav-container">
-            <div class="logo">Linea <span>Milano</span></div>
+            <div class="logo-wrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 80" class="logo-img">
+                    <path d="M 10,5 L 10,75 L 60,75" fill="none" stroke="#C5A059" stroke-width="8" />
+                    <path d="M 28,5 L 28,60 L 48,60" fill="none" stroke="#222527" stroke-width="8" />
+                    <path d="M 28,5 L 60,45" fill="none" stroke="#222527" stroke-width="8" />
+                    <path d="M 68,35 L 90,5 L 90,75" fill="none" stroke="#222527" stroke-width="8" stroke-linejoin="miter" />
+                </svg>
+                <div class="logo-container">
+                    <div class="logo">Linea <span>Milano</span></div>
+                    <div class="slogan">Linhas que inspiram ambientes</div>
+                </div>
+            </div>
             <ul class="nav-links">
                 <li><a href="#cozinhas">Cozinhas Moduladas</a></li>
                 <li><a href="#dormitorios">Dormitórios</a></li>
@@ -295,51 +348,77 @@
     <section class="categorias" id="cozinhas">
         <h2>O Nosso Catálogo</h2>
         <div class="grid-categorias">
-            
             <div class="card-categoria">
-                <img src="imagem/cozinha.png.png" alt="Cozinhas Moduladas" class="card-img-render">
-                <div class="card-content">
-                    <h3>Cozinhas Moduladas</h3>
-                    <a href="#" style="color: var(--cor-secundaria); font-weight: bold;">Ver Produtos &rarr;</a>
-                </div>
+                <img src="imagem/cozinha.png.png" alt="Cozinhas" class="card-img-render">
+                <div class="card-content"><h3>Cozinhas Moduladas</h3><a href="#" style="color: var(--cor-secundaria); font-weight: bold;">Ver Produtos &rarr;</a></div>
             </div>
-
             <div class="card-categoria">
-                <img src="imagem/quarto.png.png" alt="Dormitórios" class="card-img-render">
-                <div class="card-content">
-                    <h3>Dormitórios</h3>
-                    <a href="#" style="color: var(--cor-secundaria); font-weight: bold;">Ver Produtos &rarr;</a>
-                </div>
+                <img src="imagem/quarto.png.png" alt="Quarto" class="card-img-render">
+                <div class="card-content"><h3>Dormitórios</h3><a href="#" style="color: var(--cor-secundaria); font-weight: bold;">Ver Produtos &rarr;</a></div>
             </div>
-
             <div class="card-categoria">
                 <img src="imagem/sala.png.png" alt="Sala de Jantar" class="card-img-render">
-                <div class="card-content">
-                    <h3>Sala de Jantar</h3>
-                    <a href="#" style="color: var(--cor-secundaria); font-weight: bold;">Ver Produtos &rarr;</a>
+                <div class="card-content"><h3>Sala de Jantar</h3><a href="#" style="color: var(--cor-secundaria); font-weight: bold;">Ver Produtos &rarr;</a></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BARRA REPOSICIONADA COM ÍCONES SVG -->
+    <section class="info-bar-container">
+        <div class="info-bar">
+            <div class="payment-box">
+                <h3>Formas de Pagamento</h3>
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                    <div class="payment-option">
+                        <svg width="25" height="20" viewBox="0 0 24 24"><rect width="20" height="12" x="2" y="6" rx="2" fill="#333"/><rect width="2" height="8" x="5" y="8" fill="#fff"/><rect width="2" height="8" x="9" y="8" fill="#fff"/><rect width="4" height="8" x="13" y="8" fill="#fff"/><rect width="2" height="8" x="19" y="8" fill="#fff"/></svg>
+                        Boleto
+                    </div>
+                    <div class="payment-option">
+                        <svg width="25" height="20" viewBox="0 0 24 24"><path fill="#00bba0" d="M11.9 1L6.7 6.2l5.2 5.2 5.2-5.2L11.9 1zM6.7 6.2l-5.2 5.2 5.2 5.2 5.2-5.2-5.2-5.2zM17.1 11.4l-5.2 5.2 5.2 5.2 5.2-5.2-5.2-5.2zM11.9 16.8l-5.2 5.2 5.2 5.2 5.2-5.2-5.2-5.2z"/></svg>
+                        Pix
+                    </div>
+                    <div class="payment-option">
+                        <svg width="25" height="20" viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="5" rx="2" fill="#007bff"/><rect width="6" height="2" x="11" y="11" rx="1" fill="#fff"/></svg>
+                        Cartão de Crédito
+                    </div>
                 </div>
             </div>
-
+            <div class="cep-box">
+                <h3>Simule sua Entrega</h3>
+                <div class="cep-form">
+                    <input type="text" placeholder="CEP">
+                    <button>Calcular</button>
+                </div>
+                <p style="font-size:11px; margin-top:5px;"><strong>Frete grátis Marília-SP</strong> | Não fazemos montagem.</p>
+            </div>
         </div>
     </section>
 
     <section class="projetos-personalizados" id="projetos">
         <h2>O Seu Projeto, à Sua Medida</h2>
         <p>Sonhe, projete e realize. Envie a planta ou as medidas do seu espaço e os nossos especialistas na Linea Milano irão criar um projeto 3D utilizando os nossos módulos inteligentes.</p>
-        <p><strong>Atendimento exclusivo e personalizado.</strong></p>
         <a href="https://wa.me/SEU_NUMERO_AQUI" target="_blank" class="btn">Fale com um Especialista Agora</a>
     </section>
 
     <footer>
-        <div class="logo" style="color: white; margin-bottom: 10px;">Linea <span>Milano</span></div>
-        <p>A sua loja de mobiliário premium online. Excelência e dedicação no interior paulista.</p>
+        <div class="logo-wrapper" style="justify-content: center; margin-bottom: 10px;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 80" class="logo-img" style="filter: brightness(0) invert(1);">
+                <path d="M 10,5 L 10,75 L 60,75" fill="none" stroke="#C5A059" stroke-width="8" />
+                <path d="M 28,5 L 28,60 L 48,60" fill="none" stroke="#222527" stroke-width="8" />
+                <path d="M 28,5 L 60,45" fill="none" stroke="#222527" stroke-width="8" />
+                <path d="M 68,35 L 90,5 L 90,75" fill="none" stroke="#222527" stroke-width="8" stroke-linejoin="miter" />
+            </svg>
+            <div class="logo-container" style="align-items: flex-start; text-align: left;">
+                <div class="logo" style="color: #C5A059;">Linea <span style="color: white;">Milano</span></div>
+                <div class="slogan" style="color: #cccccc;">Linhas que inspiram ambientes</div>
+            </div>
+        </div>
+        <p>E-mail: lineamilanobr.com.br</p>
         <p>&copy; 2026 Linea Milano - Marília/SP. Todos os direitos reservados.</p>
     </footer>
 
     <a href="https://wa.me/SEU_NUMERO_AQUI" class="whatsapp-float" target="_blank" title="Fale connosco pelo WhatsApp">
-        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16">
-            <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
-        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/></svg>
     </a>
 
 </body>
