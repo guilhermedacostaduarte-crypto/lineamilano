@@ -312,6 +312,74 @@
             justify-content: center;
             transition: transform 0.3s;
         }
+
+        /* Responsividade Total (iOS, Android, Tablets e Desktops Menores) */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .logo-wrapper {
+                justify-content: center;
+            }
+            /* Menu transformado em botões para dispositivos móveis */
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 8px;
+                width: 100%;
+            }
+            .nav-links li a {
+                display: inline-block;
+                padding: 8px 14px;
+                background-color: transparent;
+                border: 1px solid var(--cor-secundaria);
+                border-radius: 20px;
+                font-size: 13px;
+                color: var(--cor-texto);
+                text-align: center;
+            }
+            .nav-links li a:hover {
+                background-color: var(--cor-secundaria);
+                color: #fff;
+            }
+            .hero {
+                padding: 80px 20px;
+            }
+            .hero h1 {
+                font-size: 32px;
+            }
+            .categorias h2 {
+                font-size: 28px;
+            }
+            .projetos-personalizados h2 {
+                font-size: 28px;
+            }
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                right: 20px;
+                font-size: 24px;
+            }
+        }
+
+        /* Ajuste fino para celulares muito pequenos (iPhone SE, etc) */
+        @media (max-width: 480px) {
+            .nav-links {
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                gap: 8px;
+            }
+            .nav-links li a {
+                font-size: 12px;
+                padding: 6px 10px;
+            }
+            .hero h1 {
+                font-size: 28px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -363,7 +431,6 @@
         </div>
     </section>
 
-    <!-- BARRA REPOSICIONADA COM ÍCONES SVG -->
     <section class="info-bar-container">
         <div class="info-bar">
             <div class="payment-box">
